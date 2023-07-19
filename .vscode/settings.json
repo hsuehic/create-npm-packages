@@ -1,0 +1,18 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  }
+}
