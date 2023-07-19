@@ -1,0 +1,99 @@
+{
+  "name": "eslint-config-cnp",
+  "version": "0.0.3",
+  "description": "Sharable ESLint configuration to make configuration for ESLint easier",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/mjs/index.d.ts",
+        "default": "./dist/mjs/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/mjs/*.d.ts",
+        "default": "./dist/mjs/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/*.d.ts",
+        "default": "./dist/cjs/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:mjs",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:mjs": "tsc --project tsconfig.mjs.json",
+    "clean": "rm -rf ./lib/ && rm -rf ./dist/",
+    "eslint": "eslint ./src/ --fix",
+    "lintpackagejson": "npmPkgJsonLint .",
+    "test:watch": "jest --watch",
+    "test": "jest --coverage",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "prerelease": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsuehic/create-npm-package.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Richard",
+    "email": "hsuehic@gmail.com",
+    "url": "https://github.com/hsuehic"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "keywords": [
+    "boilerplate",
+    "template",
+    "typescript",
+    "vscode",
+    "jest",
+    "husky",
+    "commitlint",
+    "changesets",
+    "codecov"
+  ],
+  "bugs": {
+    "url": "https://github.com/hsuehic/create-npm-package/issues"
+  },
+  "homepage": "https://github.com/hsuehic/create-npm-package#readme",
+  "devDependencies": {
+    "@types/eslint": "^8.44.1",
+    "@types/prompts": "^2.4.4",
+    "eslint": "^8.45.0",
+    "prettier": "^2.8.8"
+  },
+  "peerDependencies": {
+    "eslint": "^8.45.0",
+    "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint-plugin-cnp": "workspace:^",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.3",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.11.0"
+  }
+}

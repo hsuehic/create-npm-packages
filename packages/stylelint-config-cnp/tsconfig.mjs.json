@@ -2,11 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "ES6",
-    "target": "ES6",
     "outDir": "./dist/mjs",
-    "declaration": true,
+    "declaration": true
   },
-  "exclude": [
-    "test/**/*.spec.ts",
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["test/**/*.spec.ts"]
 }

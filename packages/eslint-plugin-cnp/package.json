@@ -1,0 +1,82 @@
+{
+  "name": "eslint-plugin-cnp",
+  "version": "0.0.1",
+  "description": "ESLint plugin for TypeScript React components",
+  "engines": {
+    "node": ">=16.10.0"
+  },
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/mjs/index.d.ts",
+        "default": "./dist/mjs/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/mjs/*.d.ts",
+        "default": "./dist/mjs/*.js"
+      },
+      "require": {
+        "types": "./dist/cjs/*.d.ts",
+        "default": "./dist/cjs/*.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "npm run build:cjs",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "lint:ts": "tsc --noEmit",
+    "lint:eslint": "eslint '**/*.{js,ts}'",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prerelease": "npm run build",
+    "prepublish": "npm run build",
+    "add-rule": "ts-node scripts/add-rule",
+    "update": "ts-node scripts/update"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.41.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "^5.59.8"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.8",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^20.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsuehic/create-npm-package.git"
+  },
+  "keywords": [
+    "typescript",
+    "template",
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsuehic/create-npm-package/issues"
+  },
+  "homepage": "https://github.com/hsuehic/create-npm-package#readme"
+}
