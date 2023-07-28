@@ -3,7 +3,7 @@
 
 import { Option, program } from 'commander';
 import prompts from 'prompts';
-import { $, cd, fs } from 'zx';
+import { $, cd, chalk, fs } from 'zx';
 
 import { REG_TEMPLATE, TEMPLATES } from './constant.js';
 import { downloadArchiveToDirectory, getUserInfo } from './util/git.js';
@@ -60,7 +60,7 @@ async function inquire(): Promise<{
     githubUsername: string;
   }>();
 
-  if (options.template === undefined || REG_TEMPLATE.test(options.template)) {
+  if (options.template === undefined || !REG_TEMPLATE.test(options.template)) {
     promptsObjs.push({
       message: 'Please select the template to use:',
       type: 'select',
@@ -130,13 +130,22 @@ const updateReadme = async (packageName: string) => {
 async function init() {
   initProgram();
   const opts = await inquire();
+  const commanderOpts = program.opts<{ template: string }>();
   const packageName = opts.name || program.args[0];
-  const { template } = opts;
+  const template = opts.template || commanderOpts.template;
   const { owner, repo } = getOwnerRepoFromTemplate(template);
   await downloadArchiveToDirectory(owner, repo, packageName);
   cd(packageName);
   await updatePackageJson(packageName);
   await updateReadme(packageName);
+  console.log(
+    chalk.bold(
+      chalk.green(`
+Created package successfully, now you can open the directory and install dependencies and happy hacking:
+${chalk.red(`cd ./${packageName}
+pnpm install`)}`)
+    )
+  );
 }
 
 await init();
