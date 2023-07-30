@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: write-all
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm 
+        run: npm -g i pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Test
+        run: pnpm -r run test
+
+      - name: eslint-plugin-cnp - Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./packages/eslint-plugin-cnp/reports/coverage-final.json
+          flags: actions
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      
+      

@@ -1,0 +1,65 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: write-all
+
+jobs:
+  lint: 
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 18
+      
+      - name: Install pnpm
+        run: npm i -g pnpm
+      
+      - name: Install Dependencies
+        run: pnpm install
+      
+      - name: Build
+        run: pnpm -r run build
+
+      - name: Install Local Dependencies
+        run: |
+          pnpm --filter="eslint-config-cnp" add eslint-plugin-cnp -P
+          pnpm add eslint-config-cnp -D -w
+
+      - name: ESLint
+        run: pnpm run eslint
+
+      - name: NpmPkgJsonLint
+        run: pnpm run npmPkgJsonLint
+
+ 
+  typecheck: 
+    name: Typecheck
+    runs-on: ubuntu-latest
+    needs: [lint]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 18
+      
+      - name: Install pnpm
+        run: npm i -g pnpm
+      
+      - name: Install Dependencies
+        run: pnpm install
+      
+      - name: Typecheck
+        run: pnpm run typecheck
+          

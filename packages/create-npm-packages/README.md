@@ -2,11 +2,11 @@
 
 [![npm version](https://img.shields.io/npm/v/create-npm-packages.svg)](https://www.npmjs.com/package/create-npm-packages)
 [![Downloads/month](https://img.shields.io/npm/dm/create-npm-packages.svg)](http://www.npmtrends.com/create-npm-packages)
-[![Release](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yaml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yaml/badge.svg?branch=main)
-[![Testing](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yaml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yaml/badge.svg?branch=main)
-[![Linting](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yaml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yaml/badge.svg?branch=main)
-[![Build](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yaml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yaml/badge.svg?branch=main)
-[![codecov](https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=PKEVM146B1)](https://codecov.io/gh/hsuehic/create-npm-packages)
+[![Release](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yaml/badge.svg?branch=main)
+[![Testing](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yaml/badge.svg?branch=main)
+[![Linting](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yaml/badge.svg?branch=main)
+[![Build](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yaml/badge.svg?branch=main)
+[![codecov](https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM)](https://codecov.io/gh/hsuehic/create-npm-packages)
 
 > Set up a npm package by running one command
 
@@ -22,6 +22,13 @@ or
 npm -g i create-npm-packages
 cnp
 ```
+
+## Availabel Templates
+<!--template_list-->
+- [hsuehic/cnp-template-javascript](https://github.com/hsuehic/cnp-template-javascript)
+- [hsuehic/cnp-template-typescript](https://github.com/hsuehic/cnp-template-typescript)
+- [hsuehic/cnp-template-typescript-eslint-plugin](https://github.com/hsuehic/cnp-template-typescript-eslint-plugin)
+<!--template_list-->
 
 ## Features
 

@@ -9,5 +9,5 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: ['dist/**/*'],
+  ignorePatterns: ['packages/*/dist/**/*'],
 };

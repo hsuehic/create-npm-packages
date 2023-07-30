@@ -36,8 +36,6 @@
     "build:mjs": "tsc --project tsconfig.mjs.json",
     "clean": "rm -rf ./dist/",
     "eslint": "eslint ./src/ --fix",
-    "test:watch": "jest --watch",
-    "test": "jest --coverage",
     "typecheck": "tsc --noEmit",
     "prepublish": "npm run build",
     "prebuild": "npm run clean"

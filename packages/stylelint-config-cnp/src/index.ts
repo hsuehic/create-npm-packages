@@ -1,3 +1,4 @@
+/* eslint-disable cnp/only-import-export */
 import { Config } from 'stylelint';
 
 const config: Config = {

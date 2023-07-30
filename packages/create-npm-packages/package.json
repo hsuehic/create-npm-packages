@@ -34,12 +34,11 @@
     "clean": "rm -rf ./lib/ && rm -rf ./dist/",
     "eslint": "eslint ./src/ --fix",
     "lintpackagejson": "npmPkgJsonLint .",
-    "test:watch": "jest --watch",
-    "test": "jest --coverage",
     "typecheck": "tsc --noEmit",
     "prepublish": "npm run build",
     "prerelease": "npm run build",
-    "prebuild": "pnpm run clean"
+    "prebuild": "pnpm run clean",
+    "update_template_list": "ts-node-esm scripts/update_template_list.ts"
   },
   "repository": {
     "type": "git",

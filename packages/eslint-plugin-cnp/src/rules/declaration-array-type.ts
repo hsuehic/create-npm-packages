@@ -4,12 +4,10 @@ import { AST_NODE_TYPES } from '@typescript-eslint/utils';
 const rule: TSESLint.RuleModule<'declaration-array-type', []> = {
   meta: {
     docs: {
-      // TODO: write the rule summary.
       description:
         'Add explicit type declarations for array variables whose type can not be inferred',
 
-      // TODO: choose the rule category.
-      // @ts-expect-error
+      // @ts-expect-error type definitions are different from eslint and @typescript-eslint
       category: 'Best Practices',
 
       recommended: 'error',
@@ -68,6 +66,7 @@ const rule: TSESLint.RuleModule<'declaration-array-type', []> = {
             }
           }
         } catch (ex) {
+          // eslint-disable-next-line cnp/no-console
           console.error(ex);
         }
       },

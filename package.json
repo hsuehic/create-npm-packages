@@ -11,7 +11,10 @@
   },
   "packageManager": "pnpm@8.6.7",
   "scripts": {
-    "prepare": "husky install"
+    "eslint": "eslint .",
+    "npmPkgJsonLint": "npmPkgJsonLint .",
+    "prepare": "husky install",
+    "release": "changeset publish"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,6 @@
 import { AST_NODE_TYPES, TSESLint } from '@typescript-eslint/utils';
 import { RuleContext } from '@typescript-eslint/utils/dist/ts-eslint';
+
 export interface Options {
   allowMethods: string[];
 }
@@ -9,7 +10,7 @@ const rule: TSESLint.RuleModule<'no-console', []> = {
     docs: {
       description: 'Disallow console expressions',
 
-      // @ts-expect-error
+      // @ts-expect-error expoected
       category: 'Best Practices',
 
       recommended: 'error',
@@ -79,4 +80,5 @@ const rule: TSESLint.RuleModule<'no-console', []> = {
   },
 };
 
+// eslint-disable-next-line import/no-default-export
 export default rule;

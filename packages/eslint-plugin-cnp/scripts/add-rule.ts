@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+
 import { pluginId } from './lib/plugin-id';
+
 (() => {
   const ruleId = process.argv[2];
 

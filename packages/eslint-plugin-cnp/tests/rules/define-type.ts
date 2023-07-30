@@ -1,4 +1,5 @@
 import { TSESLint } from '@typescript-eslint/utils';
+
 import rule from '../../src/rules/define-type';
 
 export const cases = {

@@ -119,3 +119,6 @@ dist
 lib/
 
 .DS_store
+
+reports/
+packages/*/reports/

@@ -1,4 +1,5 @@
 import { TSESLint } from '@typescript-eslint/utils';
+
 import rule from '../../src/rules/no-console';
 
 interface Options {
