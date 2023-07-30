@@ -4,7 +4,7 @@ import path from 'path';
 import { pluginId } from './lib/plugin-id';
 
 (() => {
-  const ruleId = process.argv[2];
+  const ruleId: string = process.argv[2];
 
   // Require rule ID.
   if (!ruleId) {
@@ -33,7 +33,7 @@ import { pluginId } from './lib/plugin-id';
   fs.writeFileSync(
     docPath,
     `<!--header-->
-# ${pluginId}/${ruleId}
+# ${pluginId as unknown as string}/${ruleId}
 
 > (TODO: summary)
 <!--header-->
