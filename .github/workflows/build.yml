@@ -24,7 +24,7 @@ jobs:
         run: npm -g i pnpm
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm -r run build

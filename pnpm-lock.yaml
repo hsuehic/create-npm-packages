@@ -33,7 +33,7 @@ importers:
         specifier: ^8.45.0
         version: 8.45.0
       eslint-config-cnp:
-        specifier: workspace:^
+        specifier: latest
         version: link:packages/eslint-config-cnp
       husky:
         specifier: ^6.0.0

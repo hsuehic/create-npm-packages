@@ -24,21 +24,16 @@ jobs:
         run: npm i -g pnpm
       
       - name: Install Dependencies
-        run: pnpm install
-      
-      - name: Build
-        run: pnpm -r run build
-
-      - name: Install Local Dependencies
         run: |
-          pnpm --filter="eslint-config-cnp" add eslint-plugin-cnp -P
-          pnpm add eslint-config-cnp -D -w
-
-      - name: ESLint
-        run: pnpm run eslint
+          rm ./pnpm-lock.yaml
+          echo link-workspace-packages=false >> .npmrc
+          pnpm install
 
       - name: NpmPkgJsonLint
         run: pnpm run npmPkgJsonLint
+
+      - name: ESLint
+        run: pnpm run eslint
 
  
   typecheck: 
