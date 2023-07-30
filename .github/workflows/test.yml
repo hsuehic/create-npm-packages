@@ -33,7 +33,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           files: ./packages/eslint-plugin-cnp/reports/coverage-final.json
-          flags: actions
+          flags: eslint-plugin-cnp
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       
