@@ -1,4 +1,4 @@
-# create-npm-packages
+# Create-Npm-Packages
 
 [![npm version](https://img.shields.io/npm/v/create-npm-packages.svg)](https://www.npmjs.com/package/create-npm-packages)
 [![Downloads/month](https://img.shields.io/npm/dm/create-npm-packages.svg)](http://www.npmtrends.com/create-npm-packages)
