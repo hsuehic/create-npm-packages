@@ -34,7 +34,7 @@
     "clean": "rm -rf ./lib/ && rm -rf ./dist/",
     "eslint": "eslint ./src/ --fix",
     "lintpackagejson": "npmPkgJsonLint .",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --project tsconfig.mjs.json --noEmit",
     "prepublish": "npm run build",
     "prerelease": "npm run build",
     "prebuild": "pnpm run clean",

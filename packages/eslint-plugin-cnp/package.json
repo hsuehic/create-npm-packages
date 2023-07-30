@@ -47,6 +47,7 @@
     "prerelease": "npm run build",
     "prepublish": "npm run build",
     "add-rule": "ts-node scripts/add-rule",
+    "typecheck": "tsc --project tsconfig.cjs.json --noEmit",
     "update": "ts-node scripts/update"
   },
   "peerDependencies": {
