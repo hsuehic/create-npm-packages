@@ -6,9 +6,9 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: 'tsconfig.json',
       },
-      rules: {
-        'cnp/no-console': 'off',
-      },
     },
   ],
+  rules: {
+    'cnp/only-import-export': 'off',
+  },
 };

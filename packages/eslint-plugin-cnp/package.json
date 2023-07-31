@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-cnp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint plugin for TypeScript React components",
   "engines": {
     "node": ">=16.10.0"

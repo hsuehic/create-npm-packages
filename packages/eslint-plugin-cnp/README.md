@@ -60,7 +60,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 | Rule ID | Description |    |
 |:--------|:------------|:--:|
 | [cnp/declaration-array-type](./docs/rules/declaration-array-type.md) | Add explicit type declarations for array variables whose type can not be inferred | ⭐️ |
-| [cnp/no-console](./docs/rules/no-console.md) | Disallow console expressions | ⭐️✒️ |
+| [cnp/no-console](./docs/rules/no-console.md) | Disallow console expressions | ✒️ |
 | [cnp/only-import-export](./docs/rules/only-import-export.md) | Allow only import and export statements in index files | ⭐️ |
 
 <!--RULE_TABLE_END-->

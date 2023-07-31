@@ -6,7 +6,6 @@ import defineType from './rules/define-type';
 import noConsole from './rules/no-console';
 import onlyImportExport from './rules/only-import-export';
 
-// eslint-disable-next-line cnp/only-import-export
 export = {
   configs: {
     recommended,

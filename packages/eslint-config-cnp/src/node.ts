@@ -21,7 +21,7 @@ const config: Linter.Config = {
     // typescript-eslint specific options
     warnOnUnsupportedTypeScriptVersion: true,
   },
-  plugins: ['cnp', 'import', 'json', 'prettier'],
+  plugins: ['@typescript-eslint', 'cnp', 'import', 'json', 'prettier'],
 
   extends: [
     'eslint:recommended',
@@ -37,7 +37,6 @@ const config: Linter.Config = {
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
-      plugins: ['@typescript-eslint'],
       rules: {
         '@typescript-eslint/array-type': [
           'error',
@@ -119,21 +118,15 @@ const config: Linter.Config = {
     '@typescript-eslint/naming-convention': [
       'error',
       {
-        selector: 'default',
-        format: ['camelCase'],
-      },
-
-      {
         selector: 'variable',
         format: ['camelCase', 'UPPER_CASE'],
       },
-
       {
         selector: 'variable',
         modifiers: ['global'],
+        types: ['array', 'boolean', 'number', 'string'],
         format: ['UPPER_CASE'],
       },
-
       {
         selector: 'parameter',
         format: ['camelCase'],

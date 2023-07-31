@@ -93,6 +93,9 @@ Only import and export statements are allowed in index.js files.
 
 
 
+
+
+
 To make modules clear for comsumers, and make the modules more maintainable, without worrying about comsumers use unintended exports.
 
 ## Rule Details
@@ -102,6 +105,8 @@ Refer to [Cases](#cases)
 ## Options
 
 N/A
+
+
 
 
 

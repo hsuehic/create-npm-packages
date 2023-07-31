@@ -3,7 +3,6 @@
 # cnp/no-console
 
 > Disallow console expressions
-> - ⭐️ This rule is included in `plugin:cnp/recommended` preset.
 > - ✒️ The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 <!--header-->
@@ -158,6 +157,9 @@ No console.timeStart expressions are allowed
 
 
 
+
+
+
 ## Rule Details
 
 (TODO: how does this rule check code?)
@@ -165,6 +167,8 @@ No console.timeStart expressions are allowed
 ## Options
 
 (TODO: what do options exist?)
+
+
 
 
 

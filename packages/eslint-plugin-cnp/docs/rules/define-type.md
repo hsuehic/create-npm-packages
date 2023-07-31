@@ -41,6 +41,9 @@ Add type annotation for declaration.
 
 
 
+
+
+
 ## Rule Details
 
 This rule aimed at enforcing adding type annotation for declaration.
@@ -60,6 +63,8 @@ var foo = 1;
 ## Options
 
 Nothing.
+
+
 
 
 

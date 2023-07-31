@@ -80,6 +80,9 @@ Add explicit type declarations for array variables whose type can not be inferre
 
 
 
+
+
+
 (TODO: why is this rule useful?)
 
 ## Rule Details
@@ -89,6 +92,8 @@ Add explicit type declarations for array variables whose type can not be inferre
 ## Options
 
 (TODO: what do options exist?)
+
+
 
 
 

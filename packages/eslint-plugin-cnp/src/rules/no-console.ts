@@ -13,7 +13,7 @@ const rule: TSESLint.RuleModule<'no-console', []> = {
       // @ts-expect-error expoected
       category: 'Best Practices',
 
-      recommended: 'error',
+      recommended: false,
       url: 'https://git.garena.com/shopee/promotion/promotion-fe/technique-proposal/promotion-fe-lint/-/blob/master/packages/eslint-plugin-sppt/docs/rules/no-console.md',
     },
 

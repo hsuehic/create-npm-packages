@@ -1,5 +1,13 @@
 # eslint-config-cnp
 
+## 1.0.2
+
+### Patch Changes
+
+- update lint rule name-convention
+- Updated dependencies
+  - eslint-plugin-cnp@1.0.1
+
 ## 1.0.1
 
 ### Patch Changes
