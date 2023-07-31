@@ -1,6 +1,14 @@
-<h1>styleling-config-cnp<h1>
+# styleling-config-cnp
 
-Styleling configuration for [create-npm-package](../create-npm-package/README.md)
+[![npm version](https://img.shields.io/npm/v/stylelint-config-cnp.svg)](https://www.npmjs.com/package/stylelint-config-cnp)
+[![Downloads/month](https://img.shields.io/npm/dm/stylelint-config-cnp.svg)](http://www.npmtrends.com/stylelint-config-cnp)
+[![Release](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg?branch=main)
+[![Testing](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg?branch=main)
+[![Linting](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg?branch=main)
+[![Build](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg?branch=main)
+[![codecov](https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM)](https://codecov.io/gh/hsuehic/create-npm-packages)
+
+> Sharable styleling configuration for [create-npm-package](https://github.com/hsuehic/create-npm-packages/packages/create-npm-packages/README.md)
 
 ## Requirement
 
@@ -29,7 +37,7 @@ Styleling configuration for [create-npm-package](../create-npm-package/README.md
 - Install
 
 ```bash
-npm install @shopee/stylelint-config-sppt postcss@^8.4.25 -D
+npm install stylelint-config-cnp postcss@^8.4.25 -D
 ```
 
 - Stylelint Config
@@ -38,6 +46,6 @@ npm install @shopee/stylelint-config-sppt postcss@^8.4.25 -D
 ```js
 module.exports = {
   root: true,
-  extends: ['@shopee/stylelint-config-sppt'],
+  extends: ['stylelint-config-cnp'],
 };
 ```

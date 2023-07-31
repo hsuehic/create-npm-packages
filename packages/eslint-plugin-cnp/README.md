@@ -2,15 +2,13 @@
 
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-cnp.svg)](https://www.npmjs.com/package/eslint-plugin-cnp)
 [![Downloads/month](https://img.shields.io/npm/dm/eslint-plugin-cnp.svg)](http://www.npmtrends.com/eslint-plugin-cnp)
-[![Release](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/release.yaml/badge.svg)](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/release.yaml/badge.svg?branch=main)
-[![Testing](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/test.yaml/badge.svg)](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/test.yaml/badge.svg?branch=main)
-[![Linting](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/lint.yaml/badge.svg)](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/lint.yaml/badge.svg?branch=main)
-[![Build](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/build.yaml/badge.svg)](https://github.com/hsuehic/eslint-plugin-cnp/actions/workflows/build.yaml/badge.svg?branch=main)
-[![codecov](https://codecov.io/gh/hsuehic/eslint-plugin-cnp/branch/main/graph/badge.svg?token=PKEVM146B1)](https://codecov.io/gh/hsuehic/eslint-plugin-cnp)
+[![Release](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg?branch=main)
+[![Testing](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg?branch=main)
+[![Linting](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg?branch=main)
+[![Build](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg?branch=main)
+[![codecov](https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM)](https://codecov.io/gh/hsuehic/create-npm-packages)
 
-<!--[![Dependency Status](https://david-dm.org/mysticatea/eslint-plugin-cnp.svg)](https://david-dm.org/mysticatea/eslint-plugin-cnp)-->
-
-ESLing Plugin CNP
+> Sharable ESLint Plugin for [create-npm-package](https://github.com/hsuehic/create-npm-packages/packages/create-npm-packages/README.md)
 
 ## Installation
 
@@ -52,7 +50,7 @@ See also [Configuring ESLint](https://eslint.org/docs/user-guide/configuring).
 
 ## Configs
 
-- `sppt/recommended` ... enables the recommended rules.
+- `cnp/recommended` ... enables the recommended rules.
 
 ## Rules
 

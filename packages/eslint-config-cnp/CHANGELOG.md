@@ -1,5 +1,16 @@
 # eslint-config-cnp
 
+## 1.0.0
+
+### Major Changes
+
+- update badges for packages
+
+### Patch Changes
+
+- Updated dependencies
+  - eslint-plugin-cnp@1.0.0
+
 ## 0.0.4
 
 ### Patch Changes

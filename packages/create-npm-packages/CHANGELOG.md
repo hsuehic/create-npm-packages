@@ -1,5 +1,11 @@
 # create-npm-packages
 
+## 1.0.0
+
+### Major Changes
+
+- update badges for packages
+
 ## 0.0.5
 
 ### Patch Changes

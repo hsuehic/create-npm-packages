@@ -33,8 +33,6 @@ cnp
 - [hsuehic/cnp-template-typescript-eslint-plugin](https://github.com/hsuehic/cnp-template-typescript-eslint-plugin)
 <!--template_list-->
 
-
-
 ## Features
 
 - [Changesets](https://github.com/changesets/changesets)
