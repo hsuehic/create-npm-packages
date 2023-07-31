@@ -1,6 +1,6 @@
 {
   "name": "create-npm-packages",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Set up git repo/monorepo for npm package(s) by running one command",
   "type": "module",
   "main": "./dist/mjs/index.js",
@@ -26,7 +26,8 @@
   },
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "assets"
   ],
   "scripts": {
     "build": "npm run build:mjs",

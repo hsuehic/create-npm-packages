@@ -23,14 +23,17 @@ npm -g i create-npm-packages
 cnp
 ```
 
-![demo](../../assets/demo.gif)
+![demo](./assets/demo.gif)
 
 ## Availabel Templates
 <!--template_list-->
-- [hsuehic/cnp-template-javascript](https://github.com/hsuehic/cnp-template-javascript)
 - [hsuehic/cnp-template-typescript](https://github.com/hsuehic/cnp-template-typescript)
+- [hsuehic/cnp-template-javascript](https://github.com/hsuehic/cnp-template-javascript)
+- [hsuehic/cnp-template-lit-component](https://github.com/hsuehic/cnp-template-lit-component)
 - [hsuehic/cnp-template-typescript-eslint-plugin](https://github.com/hsuehic/cnp-template-typescript-eslint-plugin)
 <!--template_list-->
+
+
 
 ## Features
 

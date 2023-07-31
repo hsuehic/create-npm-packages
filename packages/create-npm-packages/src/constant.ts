@@ -19,8 +19,9 @@ export const LINTS = [ESLINT, STYLELINT, COMMITLINT] as const;
 export type LintType = (typeof LINTS)[number];
 
 export const TEMPLATES = [
-  'hsuehic/cnp-template-javascript',
   'hsuehic/cnp-template-typescript',
+  'hsuehic/cnp-template-javascript',
+  'hsuehic/cnp-template-lit-component',
   'hsuehic/cnp-template-typescript-eslint-plugin',
 ];
 
