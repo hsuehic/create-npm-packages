@@ -1,5 +1,11 @@
 # eslint-config-cnp
 
+## 0.0.4
+
+### Patch Changes
+
+- update rule no-unused-vars
+
 ## 0.0.3
 
 ### Patch Changes

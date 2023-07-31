@@ -35,13 +35,20 @@ const config: Linter.Config = {
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],
-      plugins: ['cnp', '@typescript-eslint'],
+      plugins: ['@typescript-eslint'],
       rules: {
         '@typescript-eslint/array-type': [
           'error',
           {
             default: 'array',
             readonly: 'array',
+          },
+        ],
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            argsIgnorePattern: '^_',
+            args: 'after-used',
           },
         ],
       },
@@ -53,6 +60,13 @@ const config: Linter.Config = {
     'max-lines': ['error', 520],
     'max-statements': ['error', 21],
     'no-await-in-loop': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        args: 'after-used',
+      },
+    ],
     'object-curly-spacing': 'off',
     'prefer-arrow-callback': 'error',
     'sort-imports': [

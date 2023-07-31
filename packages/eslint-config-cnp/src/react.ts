@@ -28,6 +28,7 @@ const config: Linter.Config = {
 
   extends: [
     'eslint:recommended',
+    'plugin:cnp/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
@@ -38,6 +39,7 @@ const config: Linter.Config = {
     // 'plugin:diff/diff', // move diff to ci.js
   ],
   plugins: [
+    'cnp',
     'css-modules',
     'import',
     'json',
@@ -65,6 +67,13 @@ const config: Linter.Config = {
             readonly: 'array',
           },
         ],
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            argsIgnorePattern: '^_',
+            args: 'after-used',
+          },
+        ],
       },
     },
   ],
@@ -74,6 +83,13 @@ const config: Linter.Config = {
     'max-lines': ['error', 520],
     'max-statements': ['error', 21],
     'no-await-in-loop': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        args: 'after-used',
+      },
+    ],
     'object-curly-spacing': 'off',
     'prefer-arrow-callback': 'error',
     'quote-props': 'off',
