@@ -1,5 +1,7 @@
 import { Linter } from 'eslint';
 
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 const config: Linter.Config = {
   root: true,
   env: {
@@ -42,13 +44,6 @@ const config: Linter.Config = {
           {
             default: 'array',
             readonly: 'array',
-          },
-        ],
-        '@typescript-eslint/no-unused-vars': [
-          'error',
-          {
-            argsIgnorePattern: '^_',
-            args: 'after-used',
           },
         ],
       },
@@ -120,6 +115,68 @@ const config: Linter.Config = {
     'import/no-default-export': 'error',
     'import/no-unused-modules': 'error',
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    camelcase: 'off',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'default',
+        format: ['camelCase'],
+      },
+
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE'],
+      },
+
+      {
+        selector: 'variable',
+        modifiers: ['global'],
+        format: ['UPPER_CASE'],
+      },
+
+      {
+        selector: 'parameter',
+        format: ['camelCase'],
+        leadingUnderscore: 'forbid',
+      },
+
+      {
+        selector: 'parameter',
+        modifiers: ['unused'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require',
+      },
+      {
+        selector: 'memberLike',
+        modifiers: ['private'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require',
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+      },
+      {
+        selector: 'interface',
+        format: ['PascalCase'],
+        custom: {
+          regex: '^I[A-Z]',
+          match: false,
+        },
+      },
+      {
+        selector: 'typeParameter',
+        format: ['PascalCase'],
+        prefix: ['T'],
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        args: 'after-used',
+      },
+    ],
   },
 };
 

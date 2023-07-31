@@ -1,5 +1,7 @@
 import { Linter } from 'eslint';
 
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 const config: Linter.Config = {
   root: true,
   env: {

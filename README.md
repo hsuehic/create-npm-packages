@@ -1,12 +1,13 @@
 # Create-Npm-Packages
 
-[![npm version](https://img.shields.io/npm/v/create-npm-packages.svg)](https://www.npmjs.com/package/create-npm-packages)
-[![Downloads/month](https://img.shields.io/npm/dm/create-npm-packages.svg)](http://www.npmtrends.com/create-npm-packages)
-[![Release](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg?branch=main)
-[![Testing](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg?branch=main)
-[![Linting](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg?branch=main)
-[![Build](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg?branch=main)
-[![codecov](https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM)](https://codecov.io/gh/hsuehic/create-npm-packages)
+[![npm version][npm-img]][npm-url]
+[![Downloads/month][downloads-img]][downloads-url]
+[![Release][release-img]][release-url]
+[![Testing][test-img]][test-url]
+[![Linting][lint-img]][lint-url]
+[![Build][build-img]][build-url]
+[![Issues][issues-img]][issues-url]
+[![codecov][codecov-img]][codecov-url]
 
 > Set up a npm package by running one command
 
@@ -33,8 +34,6 @@ cnp
 - [hsuehic/cnp-template-typescript-eslint-plugin](https://github.com/hsuehic/cnp-template-typescript-eslint-plugin)
 <!--template_list-->
 
-
-
 ## Features
 
 - [Changesets](https://github.com/changesets/changesets)
@@ -48,3 +47,20 @@ cnp
 - [Jest](https://jestjs.io/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+
+[lint-img]:https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg
+[lint-url]:https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml
+[test-img]:https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg
+[test-url]:https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml
+[build-img]:https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg
+[build-url]:https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml
+[release-img]:https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg
+[release-url]:https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml
+[downloads-img]:https://img.shields.io/npm/dt/create-npm-packages
+[downloads-url]:https://www.npmtrends.com/create-npm-packages
+[npm-img]:https://img.shields.io/npm/v/create-npm-packages
+[npm-url]:https://www.npmjs.com/package/create-npm-packages
+[issues-img]:https://img.shields.io/github/issues/hsuehic/create-npm-packages
+[issues-url]:https://github.com/hsuehic/create-npm-packages/issues
+[codecov-img]:https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM
+[codecov-url]:https://codecov.io/gh/hsuehic/create-npm-packages

@@ -1,10 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import * as url from 'node:url';
 
 import { TEMPLATES } from '../src/constant.js';
-
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+import { __dirname } from '../src/util/global.js';
 
 const templates = `<!--template_list-->
 ${TEMPLATES.map((v: string) => {

@@ -1,5 +1,11 @@
 # eslint-config-cnp
 
+## 1.0.1
+
+### Patch Changes
+
+- feat: use fixed @typescript-eslint/eslint-plugin @typescript-eslint/parser
+
 ## 1.0.0
 
 ### Major Changes

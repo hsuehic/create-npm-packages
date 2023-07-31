@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-
+  
   "[css]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },

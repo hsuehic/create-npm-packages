@@ -1,5 +1,11 @@
 # create-npm-packages
 
+## 1.0.1
+
+### Patch Changes
+
+- feat: try to update package.json, README.md according user input
+
 ## 1.0.0
 
 ### Major Changes
