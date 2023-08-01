@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import * as url from 'node:url';
 
 export const __filename = url.fileURLToPath(import.meta.url);
