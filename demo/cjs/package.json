@@ -1,0 +1,12 @@
+{
+  "name": "democjs",
+  "type": "commonjs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "node src/test.js"
+  },
+  "dependencies": {
+    "cnp-utils": "workspace:^"
+  }
+}

@@ -2,10 +2,15 @@
   "name": "cnp-lint",
   "version": "1.0.0",
   "description": "A cli that helps to create set up lint for front end git repo easily",
+  "type": "module",
   "main": "./dist/mjs/index.js",
   "bin": {
     "init": "./dist/mjs/init.js"
   },
+  "files": [
+    "dist",
+    "template"
+  ],
   "scripts": {
     "build": "tsc --project tsconfig.mjs.json",
     "clean": "rm -rf ./dist",
@@ -15,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hsuehic/create-npm-package.git"
+    "url": "git+https://github.com/hsuehic/create-npm-packages.git"
   },
   "license": "MIT",
   "author": {
@@ -24,6 +29,10 @@
     "url": "https://github.com/hsuehic"
   },
   "engines": {
-    "node": ">=16.0"
+    "node": ">=18.0"
+  },
+  "dependencies": {
+    "cnp-utils": "workspace:^",
+    "zx": "^7.2.3"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "demomjs",
+  "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node ./src/test.js"
+  },
+  "dependencies": {
+    "cnp-utils": "workspace:^"
+  }
+}

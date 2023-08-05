@@ -1,15 +1,20 @@
 # Cnp-Lint
 
-[![npm version](https://img.shields.io/npm/v/cnp-lint.svg)](https://www.npmjs.com/package/cnp-lint)
-[![Downloads/month](https://img.shields.io/npm/dm/cnp-lint.svg)](http://www.npmtrends.com/cnp-lint)
-[![Release](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/release.yml/badge.svg?branch=main)
-[![Testing](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/test.yml/badge.svg?branch=main)
-[![Linting](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/lint.yml/badge.svg?branch=main)
-[![Build](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg)](https://github.com/hsuehic/create-npm-packages/actions/workflows/build.yml/badge.svg?branch=main)
-[![codecov](https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM)](https://codecov.io/gh/hsuehic/create-npm-packages)
+[![npm version][npm-img]][npm-url]
+[![Downloads/month][download-img]][download-url]
+[![codecov][codecov-img]][codecov-url]
 
 > Lint tools, including ESLint, Stylelint, Commitlint, and NpmPackageJsonlint for [create-npm-package](https://github.com/hsuehic/create-npm-packages/packages/create-npm-packages/README.md)
 
 ```bash
 npx cnp-lint 
 ```
+
+[npm-img]: https://img.shields.io/npm/v/cnp-lint.svg
+[npm-url]: https://www.npmjs.com/package/cnp-lint
+
+[download-img]: https://img.shields.io/npm/dm/cnp-lint.svg
+[download-url]: http://www.npmtrends.com/cnp-lint
+
+[codecov-img]: https://codecov.io/gh/hsuehic/create-npm-packages/branch/main/graph/badge.svg?token=38H26EP6UM
+[codecov-url]: https://codecov.io/gh/hsuehic/create-npm-packages

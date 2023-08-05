@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+
 import { Linter } from 'eslint';
 
 require('@rushstack/eslint-patch/modern-module-resolution');
@@ -45,32 +47,15 @@ const config: Linter.Config = {
             readonly: 'array',
           },
         ],
+        camelcase: 'off',
         '@typescript-eslint/naming-convention': [
           'error',
           {
-            selector: 'variable',
-            format: ['camelCase', 'UPPER_CASE'],
-          },
-          {
-            selector: 'parameter',
+            selector: 'default',
             format: ['camelCase'],
-            leadingUnderscore: 'forbid',
-          },
-
-          {
-            selector: 'parameter',
-            modifiers: ['unused'],
-            format: ['camelCase'],
-            leadingUnderscore: 'require',
           },
           {
-            selector: 'memberLike',
-            modifiers: ['private'],
-            format: ['camelCase'],
-            leadingUnderscore: 'require',
-          },
-          {
-            selector: 'typeLike',
+            selector: ['enum', 'enumMember'],
             format: ['PascalCase'],
           },
           {
@@ -82,16 +67,50 @@ const config: Linter.Config = {
             },
           },
           {
+            selector: 'memberLike',
+            modifiers: ['private'],
+            format: ['camelCase'],
+            leadingUnderscore: 'require',
+          },
+          {
+            selector: 'parameter',
+            format: ['camelCase'],
+            leadingUnderscore: 'forbid',
+          },
+          {
+            selector: 'parameter',
+            modifiers: ['unused'],
+            format: ['camelCase'],
+            leadingUnderscore: 'require',
+          },
+          {
+            selector: 'typeLike',
+            format: ['PascalCase'],
+          },
+          {
             selector: 'typeParameter',
             format: ['PascalCase'],
             prefix: ['T'],
+          },
+          {
+            selector: 'variable',
+            format: ['camelCase', 'UPPER_CASE'],
+          },
+          {
+            selector: 'variable',
+            modifiers: ['global', 'const'],
+            types: ['array', 'boolean', 'number', 'string'],
+            format: ['UPPER_CASE'],
           },
         ],
         '@typescript-eslint/no-unused-vars': [
           'error',
           {
-            argsIgnorePattern: '^_',
             args: 'after-used',
+            argsIgnorePattern: '^_',
+            destructuredArrayIgnorePattern: '^_',
+            varsIgnorePattern: '^_',
+            ignoreRestSiblings: true,
           },
         ],
       },
