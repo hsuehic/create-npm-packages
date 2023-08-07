@@ -1,5 +1,5 @@
 import { exec } from 'cnp-utils';
 
-exec`date`.then(stdout => {
+void exec`date`.then(stdout => {
   console.log(stdout);
 });
