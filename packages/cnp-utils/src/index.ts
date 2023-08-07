@@ -1,3 +1,5 @@
+export { download } from './download.js';
+
 export {
   getPackageJsonField,
   setPackageJsonField,

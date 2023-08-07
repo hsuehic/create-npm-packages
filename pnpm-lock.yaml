@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@typescript-eslint/eslint-plugin': 5.62.0
+
 importers:
 
   .:
@@ -68,18 +71,6 @@ importers:
       typescript:
         specifier: 5.2.0-dev.20230803
         version: 5.2.0-dev.20230803
-
-  demo/cjs:
-    dependencies:
-      cnp-utils:
-        specifier: workspace:^
-        version: link:../../packages/cnp-utils
-
-  demo/mjs:
-    dependencies:
-      cnp-utils:
-        specifier: workspace:^
-        version: link:../../packages/cnp-utils
 
   packages/cnp-lint:
     dependencies:

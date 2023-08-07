@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import fs from 'node:fs';
+import { PathLike, createWriteStream } from 'node:fs';
 import { pipeline } from 'node:stream/promises';
 
 // @ts-ignore cjs
@@ -7,11 +7,11 @@ import { OptionsInit } from 'got'; // https://github.com/microsoft/TypeScript/is
 
 export const download = async (
   url: string,
-  savePath: string,
+  targetFile: PathLike,
   options?: OptionsInit
 ) => {
   const { got } = await import('got');
   const streamSource = got.stream(url, { ...options, isStream: true });
-  const streamTarget = fs.createWriteStream(savePath);
+  const streamTarget = createWriteStream(targetFile);
   await pipeline(streamSource, streamTarget);
 };
