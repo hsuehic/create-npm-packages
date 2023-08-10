@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /* eslint-disable cnp/no-console */
 
+import { setPackageJsonField, setPackageJsonFields } from 'cnp-utils';
 import { Option, program } from 'commander';
 import prompts from 'prompts';
 import { cd, chalk, fs } from 'zx';
 
 import { REG_TEMPLATE, TEMPLATES } from './constant.js';
 import { downloadArchiveToDirectory, getUserInfo } from './util/git.js';
-import { setPackageJsonField, setPackageJsonFields } from './util/npm.js';
 import { updateReadme } from './util/readme.js';
 
 /**

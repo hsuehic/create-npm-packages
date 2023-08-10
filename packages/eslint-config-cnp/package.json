@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-cnp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Sharable ESLint configuration to make configuration for ESLint easier",
   "main": "./dist/cjs/index.js",
   "types": "./dist/cjs/index.d.ts",
@@ -31,9 +31,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run build:cjs && npm run build:mjs",
+    "build": "npm run build:cjs",
     "build:cjs": "tsc --project tsconfig.cjs.json",
-    "build:mjs": "tsc --project tsconfig.mjs.json",
     "clean": "rm -rf ./lib/ && rm -rf ./dist/",
     "eslint": "eslint ./src/ --fix",
     "lintpackagejson": "npmPkgJsonLint .",

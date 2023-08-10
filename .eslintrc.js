@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['cnp'],
+  extends: ['cnp/node'],
   overrides: [
     {
       files: '*.ts?(x)',

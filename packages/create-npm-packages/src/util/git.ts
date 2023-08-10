@@ -2,10 +2,9 @@ import fs from 'fs';
 
 import { Octokit } from '@octokit/rest';
 import { GetResponseDataTypeFromEndpointMethod } from '@octokit/types';
+import { download } from 'cnp-utils';
 import decompress from 'decompress';
 import { $ } from 'zx';
-
-import { download } from './download.js';
 
 const octokit = new Octokit();
 
