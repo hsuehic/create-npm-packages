@@ -53,4 +53,4 @@ const config: Linter.Config = {
   },
 };
 
-exports = config;
+export = config;

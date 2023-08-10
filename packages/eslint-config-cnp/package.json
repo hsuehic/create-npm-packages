@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-cnp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Sharable ESLint configuration to make configuration for ESLint easier",
   "main": "./dist/cjs/index.js",
   "types": "./dist/cjs/index.d.ts",
