@@ -3,11 +3,13 @@
 # cnp/declaration-array-type
 
 > Add explicit type declarations for array variables whose type can not be inferred
+>
 > - ⭐️ This rule is included in `plugin:cnp/recommended` preset.
 
 <!--header-->
 
 <!--cases-->
+
 ## Cases
 
 ### ✅ Correct
@@ -38,50 +40,43 @@ let a = new Array<number>(5);
 let a = [];
 ```
 
-Errors: 
+Errors:
 Add explicit type declarations for array variables whose type can not be inferred
-
 
 ```ts
 let a = Array();
 ```
 
-Errors: 
+Errors:
 Add explicit type declarations for array variables whose type can not be inferred
-
 
 ```ts
 let a = Array(5);
 ```
 
-Errors: 
+Errors:
 Add explicit type declarations for array variables whose type can not be inferred
-
 
 ```ts
 let a = new Array();
 ```
 
-Errors: 
+Errors:
 Add explicit type declarations for array variables whose type can not be inferred
 
-
 ```ts
-let a = []; let b = new Array(5); let c = new Array(5); let d = new Array<number>(5);
+let a = [];
+let b = new Array(5);
+let c = new Array(5);
+let d = new Array<number>(5);
 ```
 
-Errors: 
+Errors:
 Add explicit type declarations for array variables whose type can not be inferred
 Add explicit type declarations for array variables whose type can not be inferred
 Add explicit type declarations for array variables whose type can not be inferred
 
 <!--cases-->
-
-
-
-
-
-
 
 (TODO: why is this rule useful?)
 
@@ -93,11 +88,8 @@ Add explicit type declarations for array variables whose type can not be inferre
 
 (TODO: what do options exist?)
 
-
-
-
-
 <!--footer-->
+
 ## Implementation
 
 - [Rule source](../../src/rules/declaration-array-type.ts)

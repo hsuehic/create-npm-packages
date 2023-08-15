@@ -413,12 +413,6 @@ const initMarkdownlint = async () => {
           "searchScope": "text"
         },
         {
-          "name": "relative-link-path",
-          "message": "Don't use relative paths",
-          "search": "](..",
-          "searchScope": "text"
-        },
-        {
           "name": "trailing-spaces",
           "message": "Avoid trailing spaces",
           "searchPattern": "/  +$/gm",

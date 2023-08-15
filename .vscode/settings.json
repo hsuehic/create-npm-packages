@@ -14,5 +14,8 @@
   "stylelint.validate": ["css", "less", "postcss", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
-  }
+  },
+  "markdownlint.customRules": [
+    "./node_modules/markdownlint-rule-search-replace/rule.js"
+  ]
 }

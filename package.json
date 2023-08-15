@@ -9,6 +9,7 @@
   "scripts": {
     "eslint": "eslint .",
     "npmPkgJsonLint": "npmPkgJsonLint .",
+    "markdownlint": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"!**/node_modules\"",
     "prepare": "husky install",
     "release": "changeset publish"
   },

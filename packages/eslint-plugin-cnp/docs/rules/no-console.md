@@ -3,11 +3,13 @@
 # cnp/no-console
 
 > Disallow console expressions
+>
 > - ✒️ The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 <!--header-->
 
 <!--cases-->
+
 ## Cases
 
 ### ✅ Correct
@@ -17,27 +19,27 @@ count(1);
 ```
 
 With `options`:
-```json
-{"allowMethods":[]}
-```
 
+```json
+{ "allowMethods": [] }
+```
 
 ```ts
 console.count(3);
 ```
 
 With `options`:
-```json
-{"allowMethods":["count"]}
-```
 
+```json
+{ "allowMethods": ["count"] }
+```
 
 ```ts
 error(1);
 ```
 
 ```ts
-info(1)
+info(1);
 ```
 
 ```ts
@@ -67,98 +69,93 @@ console.count(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.count expressions are allowed
-
 
 ```ts
 console.error(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.error expressions are allowed
-
 
 ```ts
 console.info(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.info expressions are allowed
-
 
 ```ts
 console.profile(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.profile expressions are allowed
-
 
 ```ts
 console.time(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.time expressions are allowed
-
 
 ```ts
 console.timeEnd(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.timeEnd expressions are allowed
-
 
 ```ts
 console.timeStart(1);
 ```
 
 With `options`:
+
 ```json
-{"allowMethods":[]}
+{ "allowMethods": [] }
 ```
 
-Errors: 
+Errors:
 No console.timeStart expressions are allowed
 
 <!--cases-->
-
-
-
-
-
-
 
 ## Rule Details
 
@@ -168,11 +165,8 @@ No console.timeStart expressions are allowed
 
 (TODO: what do options exist?)
 
-
-
-
-
 <!--footer-->
+
 ## Implementation
 
 - [Rule source](../../src/rules/no-console.ts)

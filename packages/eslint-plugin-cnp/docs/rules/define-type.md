@@ -7,6 +7,7 @@
 <!--header-->
 
 <!--cases-->
+
 ## Cases
 
 ### ✅ Correct
@@ -25,24 +26,17 @@ let foo: number;
 const foo = 1;
 ```
 
-Errors: 
+Errors:
 Add type annotation for declaration.
-
 
 ```ts
 let foo;
 ```
 
-Errors: 
+Errors:
 Add type annotation for declaration.
 
 <!--cases-->
-
-
-
-
-
-
 
 ## Rule Details
 
@@ -64,11 +58,8 @@ var foo = 1;
 
 Nothing.
 
-
-
-
-
 <!--footer-->
+
 ## Implementation
 
 - [Rule source](../../src/rules/define-type.ts)
