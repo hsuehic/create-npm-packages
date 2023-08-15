@@ -22,9 +22,9 @@
       "request": "launch",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ts-node-esm",
       "args": ["${relativeFile}"],
-      "console": "integratedTerminal",
       "envFile": "${workspaceFolder}/.env",
       "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": ["<node_internals>/**", "node_modules/**"]
     },
     {

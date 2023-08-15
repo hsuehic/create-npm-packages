@@ -26,7 +26,7 @@ export const setPackageJsonFields = async (
     .map(({ key, value }) => {
       return `${key}='${value}'`;
     })
-    .join(' ')}`;
+    .join(' ')} -ws=false`;
   const pieces: TemplateStringsArray = [
     command,
   ] as unknown as TemplateStringsArray;

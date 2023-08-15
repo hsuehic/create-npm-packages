@@ -49,3 +49,23 @@ module.exports = {
   extends: ['stylelint-config-cnp'],
 };
 ```
+
+- Use with SCSS
+  `.styleintrc.js`
+
+```js
+module.exports = {
+  root: true,
+  extends: ['stylelint-config-cnp', 'stylelint-config-cnp/scss'],
+};
+```
+
+- Use with less
+  `.styleintrc.js`
+
+```js
+module.exports = {
+  root: true,
+  extends: ['stylelint-config-cnp', 'stylelint-config-cnp/less'],
+};
+```

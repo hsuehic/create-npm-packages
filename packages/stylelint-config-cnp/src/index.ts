@@ -1,17 +1,16 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable cnp/only-import-export */
 import { Config } from 'stylelint';
 
 const config: Config = {
   extends: [
-    'stylelint-config-recommended-scss',
+    'stylelint-config-recommended',
     'stylelint-config-recess-order',
     'stylelint-prettier/recommended',
-    'stylelint-config-prettier-scss',
   ],
   rules: {
     'selector-class-pattern': null,
     'no-empty-source': null,
-    'scss/at-mixin-pattern': null,
     'selector-pseudo-class-no-unknown': [
       true,
       {
