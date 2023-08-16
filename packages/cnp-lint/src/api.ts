@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises';
 
+import { detectAgent } from '@skarab/detect-package-manager';
 import {
   exec,
   getPackageJsonField,
@@ -43,6 +44,7 @@ export const initLints = async ({
   }
 
   if (lintTypes.includes(LINT_TYPES.commitlint)) await initCommitLint();
+
   await initHuskyAndLintstaged(lintTypes);
 };
 //#endregion
@@ -68,7 +70,8 @@ export const initHuskyAndLintstaged = async (lintTypes: LintTypeValue[]) => {
   }
 
   // init husky and lintstaged
-  await exec`npm install husky -D`;
+  await setDevDependency('husky');
+  await installDependences();
   await exec`npx husky install`;
   await exec`npm pkg set scripts.prepare="husky intall"`;
   if (lintTypes.includes(LINT_TYPES.commitlint)) {
@@ -93,10 +96,10 @@ export const initEslint = async (configs: EslintConfigValue[]) => {
     ESLINT_CONFIG_PACKAGE
   );
   const promises = Object.keys(eslintConfigPeerDependencies).map(k => {
-    return exec`npm add ${k}@${eslintConfigPeerDependencies[k]} -D`;
+    return setDevDependency(k, eslintConfigPeerDependencies[k]);
   });
   await Promise.all(promises);
-  await exec`npm add ${ESLINT_CONFIG_PACKAGE} -D`;
+  await setDevDependency(ESLINT_CONFIG_PACKAGE);
   await createEslintConfig(configs);
   await setPackageJsonField('scripts.eslint', 'eslint .');
   await setPackageJsonField('scripts.eslint:fix', 'npm run eslint -- --fix');
@@ -134,10 +137,10 @@ export const initStylelint = async (configs: StylelintConfigValue[]) => {
     STYLELINT_CONFIG_PACKAGE
   );
   const promises = Object.keys(peerDependencies).map((pkg: string) => {
-    return exec`npm -D add ${pkg}@${peerDependencies[pkg]}`;
+    return setDevDependency(pkg, peerDependencies[pkg]);
   });
   await Promise.all(promises);
-  await exec`npm -D addd ${STYLELINT_CONFIG_PACKAGE}`;
+  await setDevDependency(STYLELINT_CONFIG_PACKAGE);
   await createStylelintConfig(configs);
   await setPackageJsonFields([
     {
@@ -186,7 +189,9 @@ export const initNpmPackageJsonLint = async () => {
 
 //#region CommitLint
 export const initCommitLint = async () => {
-  await exec`npm -D -ws=false add @commitlint/cli @commitlint/config-conventional`;
+  await setDevDependency('@commitlint/cli');
+  await setDevDependency('@commitlint/config-conventional');
+
   await fs.writeFile(
     '.commitlintrc.js',
     `module.exports = {
@@ -198,8 +203,9 @@ export const initCommitLint = async () => {
 //#endregion
 
 //#region Markdownlint
-const initMarkdownlint = async () => {
-  await exec`npm -D add markdownlint-cli2 markdownlint-rule-search-replace`;
+export const initMarkdownlint = async () => {
+  await setDevDependency('markdownlint-cli2');
+  await setDevDependency('markdownlint-rule-search-replace');
   await fs.writeFile(
     '.markdownlint-cli2.jsonc',
     `
@@ -395,3 +401,98 @@ const initMarkdownlint = async () => {
   );
 };
 //#endregion
+
+/**
+ * memoize a method
+ * @param fn function to be decorated
+ * @returns decorator
+ *
+ *      @Example:
+ *              class Foo {
+ *                @memoize
+ *                bar() {}
+ *              }
+ */
+export const memoize = <T>(fn: () => T): (() => T) => {
+  const cache = new Map<string, T>();
+  return (...args) => {
+    let key = 'default';
+    if (args.length > 0) {
+      args.forEach(arg => {
+        key += String(arg);
+      });
+    }
+    return cache.has(key) ? (cache.get(key) as T) : fn(...args);
+  };
+};
+
+/**
+ * Get package manager
+ * @returns  "bun" | "pnpm" | "yarn" | "npm"
+ */
+export const getPackageManager = memoize(async () => {
+  const packageManager = await detectAgent();
+  return packageManager?.name || 'npm';
+});
+
+/**
+ * Add package to devDependencies section of package.json
+ * @param dependencyType {'dependencies'|'devDependencies'|'peerDependencies'}
+ * @param packageName {string} Package name
+ * @param [version] {string} semantic version
+ */
+export const setDependency = async (
+  dependencyType: 'dependencies' | 'devDependencies' | 'peerDependencies',
+  packageName: string,
+  version?: string
+) => {
+  if (!version) {
+    version = await exec`npm view ${packageName} version`;
+    version = `^${version}`;
+  }
+  await setPackageJsonField(`${dependencyType}.${packageName}`, version);
+};
+
+/**
+ * Add package to devDependencies section of package.json
+ * @param packageName {string} Package name
+ * @param [version] {string} semantic version
+ */
+export const setDevDependency = async (
+  packageName: string,
+  version?: string
+) => {
+  await setDependency('devDependencies', packageName, version);
+};
+
+/**
+ * Add package to peerDependencies section of package.json
+ * @param packageName {string} Package name
+ * @param [version] {string} semantic version
+ */
+export const setPeerDependency = async (
+  packageName: string,
+  version?: string
+) => {
+  await setDependency('peerDependencies', packageName, version);
+};
+
+/**
+ * Add package to ependencies section of package.json
+ * @param packageName {string} Package name
+ * @param [version] {string} semantic version
+ */
+export const setProdDependency = async (
+  packageName: string,
+  version?: string
+) => {
+  await setDependency('dependencies', packageName, version);
+};
+
+/**
+ * Install dependencies
+ */
+export const installDependences = async () => {
+  const packageManager = await getPackageManager();
+  await exec`${packageManager} install`;
+};

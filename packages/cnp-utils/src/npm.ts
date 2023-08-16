@@ -1,4 +1,4 @@
-import { exec } from './process';
+import { exec } from './process.js';
 
 export const setPackageJsonField = async (
   fieldName: string,

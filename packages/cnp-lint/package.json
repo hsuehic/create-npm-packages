@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./dist/mjs/index.js",
   "bin": {
-    "init": "./dist/mjs/init.js"
+    "cnp-lint": "./dist/mjs/init.js"
   },
   "files": [
     "dist",
@@ -32,6 +32,7 @@
     "node": ">=18.0"
   },
   "dependencies": {
+    "@skarab/detect-package-manager": "^1.0.0",
     "cnp-utils": "workspace:^",
     "commander": "^11.0.0",
     "prompts": "^2.4.2",
