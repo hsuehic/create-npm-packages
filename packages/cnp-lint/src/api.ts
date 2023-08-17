@@ -22,12 +22,14 @@ export interface LintOptions {
   lintTypes: LintTypeValue[];
   eslintConfigs: EslintConfigValue[];
   stylelintConfigs: StylelintConfigValue[];
+  enableHuskyAndLintStaged: boolean;
 }
 //#region All Lint
 export const initLints = async ({
   lintTypes,
   eslintConfigs,
   stylelintConfigs,
+  enableHuskyAndLintStaged,
 }: LintOptions) => {
   if (lintTypes.includes(LINT_TYPES.eslint)) {
     await initEslint(eslintConfigs);
@@ -45,7 +47,11 @@ export const initLints = async ({
 
   if (lintTypes.includes(LINT_TYPES.commitlint)) await initCommitLint();
 
-  await initHuskyAndLintstaged(lintTypes);
+  if (enableHuskyAndLintStaged) {
+    await initHuskyAndLintstaged(lintTypes);
+  } else {
+    await installDependences();
+  }
 };
 //#endregion
 

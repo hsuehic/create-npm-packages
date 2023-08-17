@@ -15,12 +15,17 @@ import {
   StylelintConfigValue,
 } from './contant.js';
 
-type PromptAnswerType = 'lintTypes' | 'eslintConfigs' | 'stylelintConfigs';
+type PromptAnswerType =
+  | 'lintTypes'
+  | 'eslintConfigs'
+  | 'stylelintConfigs'
+  | 'enableHuskyAndLintStaged';
 
 export interface LintOptions {
   lintTypes: LintTypeValue[];
   eslintConfigs: EslintConfigValue[];
   stylelintConfigs: StylelintConfigValue[];
+  enableHuskyAndLintStaged: boolean;
 }
 
 //#region Inquire
@@ -73,6 +78,15 @@ const inquire = async (): Promise<LintOptions> => {
       message: "Select stylelint configurations you'd like to add",
       choices: stylelintConfigChoices,
     },
+    {
+      type: 'toggle',
+      name: 'enableHuskyAndLintStaged',
+      message:
+        'Enable husky and lintstaged(the command should be exected under the root of a git repo)',
+      initial: false,
+      active: 'yes',
+      inactive: 'no',
+    },
   ];
 
   const lintOptions = await prompts<PromptAnswerType>(options);
@@ -82,6 +96,8 @@ const inquire = async (): Promise<LintOptions> => {
     eslintConfigs: lintOptions.eslintConfigs as unknown as EslintConfigValue[],
     stylelintConfigs:
       lintOptions.stylelintConfigs as unknown as StylelintConfigValue[],
+    enableHuskyAndLintStaged:
+      lintOptions.enableHuskyAndLintStaged as unknown as boolean,
   };
 };
 //#endregion
