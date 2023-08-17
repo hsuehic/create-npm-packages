@@ -1,5 +1,13 @@
 # cnp-lint
 
+## 1.0.1
+
+### Patch Changes
+
+- Init cnp-lint
+- Updated dependencies
+  - cnp-utils@1.0.2
+
 ## 1.0.0
 
 ### Major Changes

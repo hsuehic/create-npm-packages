@@ -1,6 +1,6 @@
 {
   "name": "cnp-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Set up git repo/monorepo for npm package(s) by running one command",
   "main": "./dist/cjs/index.js",
   "types": "./dist/cjs/index.d.ts",

@@ -1,5 +1,13 @@
 # create-npm-packages
 
+## 1.0.2
+
+### Patch Changes
+
+- Move utils to separated package
+- Updated dependencies
+  - cnp-utils@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes
