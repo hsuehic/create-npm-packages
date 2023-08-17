@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import * as fs from 'node:fs';
+
 import prompts, { PromptObject } from 'prompts';
 
 import { initLints } from './api.js';
@@ -28,7 +30,6 @@ export interface LintOptions {
   enableHuskyAndLintStaged: boolean;
 }
 
-//#region Inquire
 const inquire = async (): Promise<LintOptions> => {
   const lintTypeChoices = Object.keys(LINT_TYPES).map(k => {
     const key = k as LintTypeKey;
@@ -100,7 +101,14 @@ const inquire = async (): Promise<LintOptions> => {
       lintOptions.enableHuskyAndLintStaged as unknown as boolean,
   };
 };
-//#endregion
+
+if (!fs.existsSync('package.json')) {
+  console.log(
+    'Please run this command under the root of the project where there is a "package.json"'
+  );
+  process.exit(1);
+}
 
 const lintOptions = await inquire();
+
 await initLints(lintOptions);
