@@ -11,7 +11,7 @@ const config: Linter.Config = {
   plugins: ['jest', 'testing-library'],
   overrides: [
     {
-      files: ['tests/**', '**/__tests__/**/*', '**/*.{spec,test}.*'],
+      files: ['tests/**/*', '**/__tests__/**/*', '**/*.{spec,test}.*'],
       env: {
         'jest/globals': true,
       },

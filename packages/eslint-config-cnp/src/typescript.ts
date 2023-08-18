@@ -1,24 +1,14 @@
 import { Linter } from 'eslint';
 
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 const config: Linter.Config = {
+  plugins: ['@typescript-eslint'],
   overrides: [
     {
-      files: ['*.ts?(x)'],
-
+      files: ['*.ts', '*.tsx', '*.cts', '*.mts'],
       parser: '@typescript-eslint/parser',
-      parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-
-        // typescript-eslint specific options
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
-      plugins: ['@typescript-eslint'],
       extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
       ],

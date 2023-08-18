@@ -1,5 +1,11 @@
 # cnp-lint
 
+## 1.0.3
+
+### Patch Changes
+
+- update eslint config module
+
 ## 1.0.1
 
 ### Patch Changes

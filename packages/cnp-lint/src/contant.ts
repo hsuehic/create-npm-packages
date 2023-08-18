@@ -25,7 +25,7 @@ export const ESLINT_CONFIGS = {
   typescript: 'typescript',
   react: 'react',
   cssModule: 'css-module',
-  unitTest: 'unit-test',
+  jest: 'jest',
 } as const;
 
 export type EslintConfig = typeof ESLINT_CONFIGS;

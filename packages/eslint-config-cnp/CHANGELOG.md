@@ -1,5 +1,11 @@
 # eslint-config-cnp
 
+## 1.0.6
+
+### Patch Changes
+
+- update eslint config module
+
 ## 1.0.5
 
 ### Patch Changes
