@@ -15,10 +15,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
       
-      - name: Setup Node.js 18
+      - name: Setup Node.js 18.16.0
         uses: actions/setup-node@v3
         with: 
-          node-version: 18
+          node-version: 18.16.0
       
       - name: Install pnpm
         run: npm i -g pnpm
@@ -43,10 +43,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
       
-      - name: Setup Node.js 18
+      - name: Setup Node.js 18.16.0
         uses: actions/setup-node@v3
         with: 
-          node-version: 18
+          node-version: 18.16.0
       
       - name: Install pnpm
         run: npm i -g pnpm
@@ -54,6 +54,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
       
+      - name: Build
+        run: pnpm run -r build
+        
       - name: Typecheck
         run: pnpm -r run typecheck
           
