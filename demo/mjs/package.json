@@ -4,8 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "typecheck": "npx tsc --noEmit --project tsconfig.json",
-    "build": "npx tsc --project tsconfig.json"
+    "typecheck": "npx tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {
     "cnp-utils": "workspace:^",
