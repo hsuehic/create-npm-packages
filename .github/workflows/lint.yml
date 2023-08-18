@@ -25,9 +25,8 @@ jobs:
       
       - name: Install Dependencies
         run: |
-          rm ./pnpm-lock.yaml
-          echo link-workspace-packages=false >> .npmrc
           pnpm install
+          pnpm -r run build
 
       - name: NpmPkgJsonLint
         run: pnpm run npmPkgJsonLint
