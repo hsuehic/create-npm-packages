@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "node src/test.js"
+    "typecheck": "npx tsc --noEmit --project tsconfig.json",
+    "build": "npx tsc --project tsconfig.json"
   },
   "dependencies": {
     "cnp-utils": "workspace:^"
