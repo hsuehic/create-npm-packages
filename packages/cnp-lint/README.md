@@ -4,7 +4,7 @@
 [![Downloads/month][download-img]][download-url]
 [![codecov][codecov-img]][codecov-url]
 
-> Lint tools, including ESLint, Stylelint, Commitlint, NpmPackageJsonlint, Pretter(integrated with ESLint/stylelint), markdownlint as VSCode configurations for [create-npm-package](https://github.com/hsuehic/create-npm-packages/packages/create-npm-packages/README.md)
+> Lint tools, including ESLint, Stylelint, Commitlint, NpmPackageJsonlint, Pretter(integrated with ESLint/stylelint), markdownlint as VSCode configurations for [create-npm-package](https://github.com/hsuehic/create-npm-packages/blob/main/packages/create-npm-packages/README.md)
 
 ```bash
 npx cnp-lint
