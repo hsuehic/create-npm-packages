@@ -37,7 +37,6 @@
     "lintpackagejson": "npmPkgJsonLint .",
     "typecheck": "tsc --project tsconfig.mjs.json --noEmit",
     "prepublish": "npm run build",
-    "prerelease": "npm run build",
     "prebuild": "pnpm run clean",
     "update_template_list": "ts-node-esm scripts/update_template_list.ts"
   },

@@ -43,7 +43,6 @@
     "lintpackagejson": "npmPkgJsonLint .",
     "typecheck": "tsc --project tsconfig.mjs.json --noEmit",
     "prepublish": "npm run build",
-    "prerelease": "npm run build",
     "prebuild": "npm run clean",
     "update_template_list": "ts-node-esm scripts/update_template_list.ts",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",

@@ -38,8 +38,7 @@
     "lintpackagejson": "npmPkgJsonLint .",
     "typecheck": "tsc --project tsconfig.cjs.json --noEmit",
     "prebuild": "npm run clean",
-    "prepublish": "npm run build",
-    "prerelease": "npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
