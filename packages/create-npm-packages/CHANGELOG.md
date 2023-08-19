@@ -1,5 +1,11 @@
 # create-npm-packages
 
+## 1.0.5
+
+### Patch Changes
+
+- added template typescript-monorepo
+
 ## 1.0.4
 
 ### Patch Changes

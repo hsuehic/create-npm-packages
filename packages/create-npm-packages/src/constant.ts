@@ -20,6 +20,7 @@ export type LintType = (typeof LINTS)[number];
 
 export const TEMPLATES = [
   'hsuehic/cnp-template-typescript',
+  'hsuehic/cnp-template-typescript-monorepo',
   'hsuehic/cnp-template-javascript',
   'hsuehic/cnp-template-lit-component',
   'hsuehic/cnp-template-typescript-eslint-plugin',
