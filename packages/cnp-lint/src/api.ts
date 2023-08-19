@@ -345,7 +345,7 @@ export const initMarkdownlint = async () => {
           "name": "curly-double-quotes",
           "message": "Don't use curly double quotes",
           "searchPattern": "/“|”/g",
-          "replace": "\\\\"",
+          "replace": "\\"",
           "searchScope": "text"
         },
         {
