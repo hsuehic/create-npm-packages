@@ -1,5 +1,11 @@
 # cnp-lint
 
+## 2.0.2
+
+### Patch Changes
+
+- fixed typo
+
 ## 2.0.1
 
 ### Patch Changes
