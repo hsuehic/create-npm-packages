@@ -1,5 +1,11 @@
 # cnp-lint
 
+## 2.0.0
+
+### Major Changes
+
+- fix character escape for markdownlint config
+
 ## 1.0.3
 
 ### Patch Changes
