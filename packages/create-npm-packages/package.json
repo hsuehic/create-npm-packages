@@ -1,6 +1,6 @@
 {
   "name": "create-npm-packages",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Set up git repo/monorepo for npm package(s) by running one command",
   "type": "module",
   "main": "./dist/mjs/index.js",
@@ -37,7 +37,9 @@
     "lintpackagejson": "npmPkgJsonLint .",
     "typecheck": "tsc --project tsconfig.mjs.json --noEmit",
     "prepublish": "npm run build",
-    "prebuild": "pnpm run clean",
+    "prebuild": "npm run clean && npm run update_version",
+    "prepare": "npm run update_version",
+    "update_version": "version=$(npm pkg get version -ws=false | tr -d \\\") && echo \"export const PACKAGE_VERSION = '${version}';\" > ./src/version.ts",
     "update_template_list": "ts-node-esm scripts/update_template_list.ts"
   },
   "repository": {

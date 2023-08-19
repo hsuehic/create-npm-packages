@@ -53,7 +53,7 @@
     "esModuleInterop": true,                        /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. https://stackoverflow.com/questions/62096269/cant-run-my-node-js-typescript-project-typeerror-err-unknown-file-extension */
     // "preserveSymlinks": true,                    /* Do not resolve the real path of symlinks. */
     // "allowUmdGlobalAccess": true,                /* Allow accessing UMD globals from modules. */
-    // "resolveJsonModule": true,
+    "resolveJsonModule": true,
     // "resolvePackageJsonExports": true,
     // "resolvePackageJsonImports": true,
     /* Source Map Options */

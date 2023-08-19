@@ -9,12 +9,14 @@ import { cd, chalk, fs } from 'zx';
 import { REG_TEMPLATE, TEMPLATES } from './constant.js';
 import { downloadArchiveToDirectory, getUserInfo } from './util/git.js';
 import { updateReadme } from './util/readme.js';
+import { PACKAGE_VERSION } from './version.js';
 
 /**
  * Init Cli Program
  */
 function initProgram() {
   program
+    .version(PACKAGE_VERSION, '-v, --version', 'output the current version')
     .description('Create a npm package using pre-defined templates')
     .addOption(
       new Option(
