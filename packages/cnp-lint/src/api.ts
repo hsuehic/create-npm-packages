@@ -238,7 +238,7 @@ export const initMarkdownlint = async () => {
       "allow_different_nesting": true
     },
     "single-title": {
-      "front_matter_title": "^\\s*title\\s*[:=]"
+      "front_matter_title": "^\\\\s*title\\\\s*[:=]"
     },
     "no-trailing-punctuation": {
       "punctuation": ".,;:"
@@ -345,7 +345,7 @@ export const initMarkdownlint = async () => {
           "name": "curly-double-quotes",
           "message": "Don't use curly double quotes",
           "searchPattern": "/“|”/g",
-          "replace": "\\"",
+          "replace": "\\\\"",
           "searchScope": "text"
         },
         {
@@ -372,14 +372,14 @@ export const initMarkdownlint = async () => {
         {
           "name": "double-spaces",
           "message": "Avoid double spaces",
-          "searchPattern": "/([^\\s>])  ([^\\s|])/g",
+          "searchPattern": "/([^\\\\s>])  ([^\\\\s|])/g",
           "replace": "$1 $2",
           "searchScope": "text"
         },
         {
           "name": "stuck-definition",
           "message": "Character is stuck to definition description marker",
-          "searchPattern": "/- :(\\w)/g",
+          "searchPattern": "/- :(\\\\w)/g",
           "replace": "- : $1",
           "searchScope": "text"
         },
@@ -393,7 +393,7 @@ export const initMarkdownlint = async () => {
         {
           "name": "localhost-links",
           "message": "Don't use localhost for links",
-          "searchPattern": "/\\]\\(https?:\\/\\/localhost:\\d+\\//g",
+          "searchPattern": "/\\\\]\\\\(https?:\\\\/\\\\/localhost:\\\\d+\\\\//g",
           "replace": "](/",
           "searchScope": "text"
         }
