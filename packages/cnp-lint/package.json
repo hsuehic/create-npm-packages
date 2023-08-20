@@ -1,6 +1,6 @@
 {
   "name": "cnp-lint",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "A cli that helps to create set up lint for front end git repo easily",
   "type": "module",
   "main": "./dist/mjs/index.js",
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@skarab/detect-package-manager": "^1.0.0",
+    "cnp-progress": "workspace:^",
     "cnp-utils": "workspace:^",
     "commander": "^11.0.0",
     "prompts": "^2.4.2",

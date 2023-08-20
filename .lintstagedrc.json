@@ -1,5 +1,6 @@
 {
-  "*.ts": "eslint --cache --cache-location .eslintcache --fix",
+  "*.{js,ts,jsx,tsx}": "eslint --cache --cache-location .eslintcache --fix",
   "package.json": "npmPkgJsonLint",
   "*.md": ["markdownlint-cli2 --fix", "prettier --write"]
 }
+ 

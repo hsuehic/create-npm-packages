@@ -1,5 +1,16 @@
 # cnp-lint
 
+## 2.1.0
+
+### Minor Changes
+
+- add hint for progress
+
+### Patch Changes
+
+- Updated dependencies
+  - cnp-progress@1.0.1
+
 ## 2.0.2
 
 ### Patch Changes

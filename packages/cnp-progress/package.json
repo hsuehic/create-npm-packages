@@ -1,0 +1,49 @@
+{
+  "name": "cnp-progress",
+  "version": "1.0.1",
+  "description": "Flexible node progress bar for Windows/macOS/Linux.",
+  "main": "dist/cjs/progress.js",
+  "types": "dist/cjs/progress.d.ts",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hsuehic/create-npm-packages.git"
+  },
+  "keywords": [
+    "node-progress",
+    "node progress",
+    "node progress bar",
+    "node-progress-bar",
+    "progress",
+    "progress bar",
+    "progress-bar",
+    "status bar",
+    "statusbar",
+    "cli",
+    "cli progress",
+    "cli progress bar",
+    "terminal",
+    "terminal progress",
+    "terminal progress bar",
+    "console",
+    "console progress",
+    "console progress bar"
+  ],
+  "author": "Xiaowei Xue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsuehic/create-npm-packages/issues"
+  },
+  "homepage": "https://github.com/hsuehic/create-npm-packages#readme",
+  "dependencies": {
+    "charm": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/charm": "^1.0.3"
+  }
+}

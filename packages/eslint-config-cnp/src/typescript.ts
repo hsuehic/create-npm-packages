@@ -76,6 +76,7 @@ const config: Linter.Config = {
             format: ['UPPER_CASE'],
           },
         ],
+        'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': [
           'error',
           {

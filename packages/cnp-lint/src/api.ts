@@ -1,6 +1,8 @@
+/* eslint-disable max-lines */
 import * as fs from 'node:fs/promises';
 
 import { detectAgent } from '@skarab/detect-package-manager';
+import { Progress } from 'cnp-progress';
 import {
   exec,
   getPackageJsonField,
@@ -25,33 +27,61 @@ export interface LintOptions {
   enableHuskyAndLintStaged: boolean;
 }
 //#region All Lint
+// eslint-disable-next-line max-statements
 export const initLints = async ({
   lintTypes,
   eslintConfigs,
   stylelintConfigs,
   enableHuskyAndLintStaged,
 }: LintOptions) => {
+  console.log();
+  const total = lintTypes.length + 1;
+  const progress = Progress.create({
+    total,
+    title: 'Setting up lints and install dependencies',
+    pattern:
+      'Progress: {bar.white.cyan.20} | Elapsed: {elapsed.green} | Remaining: {remaining.blue} | {percent.magenta} | {current.red}/{total.yellow} {message.green}',
+    updateFrequency: 100,
+  });
+
+  let count = 0;
+
   if (lintTypes.includes(LINT_TYPES.eslint)) {
     await initEslint(eslintConfigs);
+    count++;
+    progress.update(count, 'Set up ESLint done');
   }
   if (lintTypes.includes(LINT_TYPES.stylelint)) {
     await initStylelint(stylelintConfigs);
+    count++;
+    progress.update(count, 'Set up Stylelint done');
   }
   if (lintTypes.includes(LINT_TYPES.npmPackageJsonLint)) {
     await initNpmPackageJsonLint();
+    count++;
+    progress.update(count, 'Set up NpmPackageJsonLint done');
   }
 
   if (lintTypes.includes(LINT_TYPES.markdownlint)) {
     await initMarkdownlint();
+    count++;
+    progress.update(count, 'Set up Markdownlint done');
   }
 
-  if (lintTypes.includes(LINT_TYPES.commitlint)) await initCommitLint();
+  if (lintTypes.includes(LINT_TYPES.commitlint)) {
+    await initCommitLint();
+    count++;
+    progress.update(count, 'Set up Commitlint done');
+  }
 
   if (enableHuskyAndLintStaged) {
     await initHuskyAndLintstaged(lintTypes);
   } else {
     await installDependences();
   }
+  count++;
+  progress.update(count, 'Install dependencies done');
+  progress.done();
 };
 //#endregion
 
@@ -77,19 +107,17 @@ export const initHuskyAndLintstaged = async (lintTypes: LintTypeValue[]) => {
 
   // init husky and lintstaged
   await setDevDependency('husky');
+  await setDevDependency('lint-staged');
   await installDependences();
   await exec`npx husky install`;
   await exec`npm pkg set scripts.prepare="husky intall"`;
   if (lintTypes.includes(LINT_TYPES.commitlint)) {
     await exec`npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'`;
   }
-  await exec`npx husky add .husky/pre-commit 'npx lintstaged`;
-  await fs.appendFile(
-    '.lintstagedrc',
-    `
-{   
-  ${lintStagedTasks.join(',\n')}
-}
+  await exec`npx husky add .husky/pre-commit 'npx lint-staged'`;
+  await fs.writeFile(
+    '.lintstagedrc.json',
+    `{\n${lintStagedTasks.join(',\n')}\n}
  `
   );
 };
@@ -117,13 +145,12 @@ export const createEslintConfig = async (configs: EslintConfigValue[]) => {
   const fileName = isModule ? '.eslintrc.js' : '.eslintrc.cjs';
   const eslintConfigs = ["'cnp'"];
   configs.map(k => {
-    eslintConfigs.push(`'cnp/${k}`);
+    eslintConfigs.push(`'cnp/${k}'`);
     return k;
   });
-  const content = `
-module.exports = {
+  const content = `module.exports = {
   root: true,
-  extends: [${eslintConfigs.join(',')}],
+  extends: [${eslintConfigs.join(', ')}],
   overrides: [
     {
       files: '*.ts?(x)',
@@ -132,7 +159,8 @@ module.exports = {
       },
     },
   ],
-};`;
+};
+`;
   await fs.writeFile(fileName, content);
 };
 //#endregion
@@ -170,18 +198,19 @@ export const createStylelintConfig = async (
     stylelintConfigs.push(`'stylelint-config-cnp/${k}`);
     return k;
   });
-  const content = `
-module.exports = {
+  const content = `module.exports = {
   root: true,
   extends: [${stylelintConfigs.join(',')}],
-};`;
+};
+`;
   await fs.writeFile(fileName, content);
 };
 // #endregion
 
 //#region  npmPackageJsonLint
 export const initNpmPackageJsonLint = async () => {
-  await exec`npm -D add npm-package-json-lint-config-default npm-package-json-lint`;
+  await setDevDependency('npm-package-json-lint');
+  await setDevDependency('npm-package-json-lint-config-default');
   await fs.writeFile(
     '.npmpackagejsonlintrc.json',
     `{

@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['cnp/node'],
+  extends: ['cnp', 'cnp/typescript', 'cnp/jest'],
   overrides: [
     {
       files: '*.ts?(x)',
@@ -9,8 +9,4 @@ module.exports = {
       },
     },
   ],
-  rules: {
-    '@typescript-eslint/naming-convention': 'off',
-  },
-  ignorePatterns: ['packages/*/dist/**/*', 'demo/*/dist/**/*'],
 };

@@ -1,3 +1,4 @@
+
 // This file defines our configuration for Markdownlint. See
 // https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 // for more details on each rule.
@@ -139,24 +140,10 @@
           "searchScope": "text"
         },
         {
-          "name": "nbsp",
-          "message": "Don't use no-break spaces",
-          "searchPattern": "/ /g",
-          "replace": " ",
-          "searchScope": "all"
-        },
-        {
           "name": "m-dash",
           "message": "Don't use '--'. Use m-dash — instead",
           "search": " -- ",
           "replace": " — ",
-          "searchScope": "text"
-        },
-        {
-          "name": "relative-link",
-          "message": "Internal links should start with '/'",
-          "searchPattern": "/([\\(\"])en-US\\/docs/g",
-          "replace": "$1/en-US/docs",
           "searchScope": "text"
         },
         {
