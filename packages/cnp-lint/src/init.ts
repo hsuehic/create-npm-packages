@@ -2,6 +2,7 @@
 
 import * as fs from 'node:fs';
 
+import { program } from 'commander';
 import prompts, { PromptObject } from 'prompts';
 
 import { initLints } from './api.js';
@@ -16,6 +17,7 @@ import {
   StylelintConfigKey,
   StylelintConfigValue,
 } from './contant.js';
+import { PACKAGE_VERSION } from './version.js';
 
 type PromptAnswerType =
   | 'lintTypes'
@@ -29,6 +31,9 @@ export interface LintOptions {
   stylelintConfigs: StylelintConfigValue[];
   enableHuskyAndLintStaged: boolean;
 }
+
+program.version(PACKAGE_VERSION, '-v, --version', 'output the current version');
+program.parse();
 
 const inquire = async (): Promise<LintOptions> => {
   const lintTypeChoices = Object.keys(LINT_TYPES).map(k => {

@@ -1,5 +1,11 @@
 # cnp-lint
 
+## 2.1.2
+
+### Patch Changes
+
+- update progress bar color, added version option
+
 ## 2.1.1
 
 ### Patch Changes

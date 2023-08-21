@@ -1,6 +1,6 @@
 {
   "name": "cnp-lint",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A cli that helps to create set up lint for front end git repo easily",
   "type": "module",
   "main": "./dist/mjs/index.js",
@@ -16,6 +16,8 @@
     "clean": "rm -rf ./dist",
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
+    "prepare": "npm run update_version",
+    "update_version": "version=$(npm pkg get version -ws=false | tr -d \\\") && echo \"export const PACKAGE_VERSION = '${version}';\" > ./src/version.ts",
     "typecheck": "tsc --project tsconfig.mjs.json --noEmit"
   },
   "repository": {

@@ -40,7 +40,7 @@ export const initLints = async ({
     total,
     title: 'Setting up lints and install dependencies',
     pattern:
-      'Progress: {bar.white.cyan.20} | Elapsed: {elapsed.green} | Remaining: {remaining.blue} | {percent.magenta} | {current.red}/{total.yellow} {message.green}',
+      'Progress: {bar.white.green.20} | Elapsed: {elapsed.green} | Remaining: {remaining.blue} | {percent.magenta} | {current.red}/{total.yellow} {message.green}',
     updateFrequency: 100,
   });
 
