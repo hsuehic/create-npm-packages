@@ -9,6 +9,7 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/naming-convention': 'off',
     'cnp/only-import-export': 'off',
   },
 };
