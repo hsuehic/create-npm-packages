@@ -178,11 +178,11 @@ export const initStylelint = async (configs: StylelintConfigValue[]) => {
   await createStylelintConfig(configs);
   await setPackageJsonFields([
     {
-      key: 'stylelint',
+      key: 'scripts.stylelint',
       value: 'stylelint "./src/**/*{.less,.scss,.css}"',
     },
     {
-      key: 'stylelint:fix',
+      key: 'scripts.stylelint:fix',
       value: 'npm run stylelint -- --fix',
     },
   ]);
@@ -218,7 +218,7 @@ export const initNpmPackageJsonLint = async () => {
   }  
 `
   );
-  await setPackageJsonField('npmPkgJsonLint', 'npmPkgJsonLint .');
+  await setPackageJsonField('scripts.npmPkgJsonLint', 'npmPkgJsonLint .');
 };
 //#endregion
 
