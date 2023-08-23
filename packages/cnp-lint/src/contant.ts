@@ -33,7 +33,7 @@ export type EslintConfigKey = keyof EslintConfig;
 export type EslintConfigValue = EslintConfig[EslintConfigKey];
 
 export const STYLELINT_CONFIGS = {
-  sass: 'sass',
+  scss: 'scss',
   less: 'less',
 } as const;
 
