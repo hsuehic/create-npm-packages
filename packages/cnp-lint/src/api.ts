@@ -142,7 +142,7 @@ export const initEslint = async (configs: EslintConfigValue[]) => {
 export const createEslintConfig = async (configs: EslintConfigValue[]) => {
   // init eslint configuration
   const isModule = (await getPackageJsonField('type')).trimEnd() === 'module';
-  const fileName = isModule ? '.eslintrc.js' : '.eslintrc.cjs';
+  const fileName = isModule ? '.eslintrc.cjs' : '.eslintrc.js';
   const eslintConfigs = ["'cnp'"];
   configs.map(k => {
     eslintConfigs.push(`'cnp/${k}'`);
@@ -192,7 +192,7 @@ export const createStylelintConfig = async (
   configs: StylelintConfigValue[]
 ) => {
   const isModule = (await getPackageJsonField('type')).trimEnd() === 'module';
-  const fileName = isModule ? '.stylelintrc.js' : '.stylelintrc.cjs';
+  const fileName = isModule ? '.stylelintrc.cjs' : '.stylelintrc.js';
   const stylelintConfigs = ["'stylelint-config-cnp'"];
   configs.map(k => {
     stylelintConfigs.push(`'stylelint-config-cnp/${k}'`);

@@ -1,6 +1,6 @@
 {
   "name": "cnp-lint",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "A cli that helps to create set up lint for front end git repo easily",
   "type": "module",
   "main": "./dist/mjs/index.js",
