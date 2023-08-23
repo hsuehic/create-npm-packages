@@ -192,10 +192,10 @@ export const createStylelintConfig = async (
   configs: StylelintConfigValue[]
 ) => {
   const isModule = (await getPackageJsonField('type')).trimEnd() === 'module';
-  const fileName = isModule ? '.stylelintrc.js' : '.eslintrc.cjs';
+  const fileName = isModule ? '.stylelintrc.js' : '.stylelintrc.cjs';
   const stylelintConfigs = ["'stylelint-config-cnp'"];
   configs.map(k => {
-    stylelintConfigs.push(`'stylelint-config-cnp/${k}`);
+    stylelintConfigs.push(`'stylelint-config-cnp/${k}'`);
     return k;
   });
   const content = `module.exports = {
